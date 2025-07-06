@@ -71,9 +71,10 @@
 
 # 📚 Hướng dẫn chạy chương trình
 ## 🚀 Các bước chạy chương trình
-- Bước 1: Chạy file generate_keys.py để tạo khóa bằng lệnh: ```python generate_keys.py```
-- Bước 2: Chạy chương trình: ```python app.py```
-- Bước 3: Mở trình duyệt truy cập:
+- Bước 1: cd vào folder backend: ```cd backend```
+- Bước 2: Chạy file generate_keys.py để tạo khóa bằng lệnh: ```python generate_keys.py```
+- Bước 3: Chạy chương trình: ```python app.py```
+- Bước 4: Mở trình duyệt truy cập:
   + Giao diện gửi: http://127.0.0.1:5000/
   + Giao diện nhận: http://127.0.0.1:5000/receiver
   + Danh sách file đã nhận: http://127.0.0.1:5000/files
@@ -81,9 +82,11 @@
 🔐 Bên gửi:
 - Vào trang chính → chọn hoặc kéo thả file .txt
 - Nhấn Gửi → hệ thống mã hóa và tạo gói tin transmission.json
+  
 📥 Bên nhận:
 - Vào trang /receiver → nhấn Nhận
 - Nếu gói tin hợp lệ, sẽ hiển thị thông báo thành công và lưu vào thư mục received_files/
+  
 📂 Quản lý file:
 - Truy cập trang /files để xem danh sách file đã nhận, tải về hoặc xóa
   
