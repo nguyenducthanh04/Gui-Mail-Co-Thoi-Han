@@ -65,7 +65,7 @@
 - Chạy lệnh sau trong terminal:
 ```pip install flask pycryptodome```
 - Hoặc dùng requirements.txt:
-📄 requirements.txt
+📄 requirements.txt -> 
 ```flask```
 ```pycryptodome```
 
