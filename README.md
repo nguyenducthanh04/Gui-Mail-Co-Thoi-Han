@@ -76,8 +76,14 @@
 - Bước 3: Chạy chương trình: ```python app.py```
 - Bước 4: Mở trình duyệt truy cập:
   + Giao diện gửi: http://127.0.0.1:5000/
+    ![image](https://github.com/user-attachments/assets/642781f2-2060-4edb-b077-ca8c36a2702c)
+
   + Giao diện nhận: http://127.0.0.1:5000/receiver
+    ![image](https://github.com/user-attachments/assets/fc190b15-c084-4128-9abe-6cfd2d8a6dc5)
+
   + Danh sách file đã nhận: http://127.0.0.1:5000/files
+    ![image](https://github.com/user-attachments/assets/39007295-80a1-4978-b0ef-98284e8ecb44)
+
 ## 📘 Cách sử dụng
 ### 🔐 Bên gửi:
 - Vào trang chính → chọn hoặc kéo thả file .txt
