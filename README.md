@@ -79,32 +79,16 @@
   + Giao diện nhận: http://127.0.0.1:5000/receiver
   + Danh sách file đã nhận: http://127.0.0.1:5000/files
 ## 📘 Cách sử dụng
-🔐 Bên gửi:
+### 🔐 Bên gửi:
 - Vào trang chính → chọn hoặc kéo thả file .txt
 - Nhấn Gửi → hệ thống mã hóa và tạo gói tin transmission.json
   
-📥 Bên nhận:
+### 📥 Bên nhận:
 - Vào trang /receiver → nhấn Nhận
 - Nếu gói tin hợp lệ, sẽ hiển thị thông báo thành công và lưu vào thư mục received_files/
   
-📂 Quản lý file:
+### 📂 Quản lý file:
 - Truy cập trang /files để xem danh sách file đã nhận, tải về hoặc xóa
   
-# 📘 Hướng dẫn sử dụng 
-## 🔐 Nhận diện khuôn mặt mở cửa: 
-- Người dùng đưa khuôn mặt vào camera để nhận diện.
-- Nếu nhận diện đúng với khuôn mặt đã lưu cửa sẽ tự động mở ra.
-- Sai khuôn mặt sẽ hiển cảnh báo đồng thời cửa sẽ không mở.
-## 💳 Quét thẻ từ mở cửa:
-- Người dùng đưa thẻ từ vào quét.
-- Nếu đúng mã thẻ cửa sẽ mở.
-- Sai mã thẻ sẽ không mở cửa.
-- Nếu cửa đang mở chờ hết 1 phút cửa sẽ tự động đóng.
-## ⛽ Cảnh báo khí gas:
-- Sử dụng bật lửa xì gas vào cảm biến.
-- Cảm biến phát hiện khí gas còi sẽ kêu, đèn nhấp nháy, cửa sổ mở và thông báo qua pushover.
-## 💡 Cảm biến ánh sáng bật đèn:
-- Chỉ cần lấy tay che toàn bộ cảm biến hoặc để cảm biến vào nơi thiếu ánh sáng.
-- Đèn sẽ tự động bật.
-# 🖼️ Poster
-![Poster_CNTT5_ThanhNguyen](https://github.com/user-attachments/assets/88c03204-924c-4363-b59b-c254b1a99b39)
+# 🖼️ Sơ đồ luồng xử lý
+![image](https://github.com/user-attachments/assets/3a469445-d889-453b-b96b-5a09f742cc42)
