@@ -59,17 +59,20 @@
 ## 🗂️ Quản lý file
 - Thư mục received_files/ – Lưu các file đã giải mã thành công.
 
-File transmission.json – Gói tin truyền tạm thời giữa người gửi và người nhận.
-# 📋 Yêu cầu hệ thống
-## ⚙️ Phần cứng:
-- 🖥️ Arduino, 3 đèn led, còi, cảm biến khí gas, cảm biến ánh sáng, 3 servo, đầu lọc thẻ từ
-- 🔌 Cáp USB để kết nối máy tính với Arduino
-## 💾 Phần mềm:
-- 🐍 Python (xử lý nhận diện khuôn mặt, điều khiển cửa và thực hiện gửi thông báo)
-- 🛠️ Arduino IDE (nạp code Arduino)
-- 📩 Pushover (dùng để gửi thông báo) 
+- File transmission.json – Gói tin truyền tạm thời giữa người gửi và người nhận.
+  
 ## 📦 Cài đặt thư viện cần thiết
-```pip3 install opencv-python pyserial requests flask numpy```
+- Chạy lệnh sau trong terminal:
+```pip install flask pycryptodome```
+- Hoặc dùng requirements.txt:
+📄 requirements.txt
+```flask
+pycryptodome```
+
+
+
+
+
 # 🔌 Hướng dẫn cắm dây bảng mạch
 🔐 Cắm dây đối với chức năng mở cửa khuôn mặt, cảnh báo khí gas, cảm biến ánh sáng: 
 
