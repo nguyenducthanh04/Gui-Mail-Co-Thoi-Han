@@ -52,7 +52,6 @@
         const resDiv = document.getElementById("res");
         resDiv.innerText = j.message;
 
-        // Nếu nhận thành công thì hiện thông báo xác nhận
         if (j.message.includes("✅")) {
           document.getElementById("dl").style.display = "inline";
           document.getElementById("notice").innerText = "✅ Đã nhận gói tin thành công!";
@@ -74,7 +73,6 @@
           notice.innerText = `📩 Có gói tin mới! Vui lòng nhận trước khi hết hạn (${mins} phút ${secs} giây).`;
           notice.style.color = "red";
 
-          // Nếu trước đó hiển thị 'chưa có gói tin', thì xóa đi
           if (resDiv.innerText.includes("Chưa có gói tin")) {
             resDiv.innerText = "";
           }
@@ -86,7 +84,6 @@
       });
   }
 
-  // Kiểm tra trạng thái mỗi 3 giây
   setInterval(checkPacketStatus, 3000);
 </script>
 

@@ -139,26 +139,39 @@
     });
 
     function send() {
-      const file = fileIn.files[0];
-      if (!file) return alert("❗ Vui lòng chọn hoặc kéo file .txt!");
+  const file = document.getElementById("fileIn").files[0];
+  if (!file) return alert("❗ Vui lòng chọn hoặc kéo file .txt!");
 
-      const fd = new FormData();
-      fd.append("file", file);
+  const fd = new FormData();
+  fd.append("file", file);
 
-      fetch("/send", {
-        method: "POST",
-        body: fd
-      })
-      .then(r => r.json())
-      .then(j => document.getElementById("res").innerText = j.message)
-      .catch(err => alert("❌ Gửi thất bại: " + err.message));
-    }
+  fetch("/send", {
+    method: "POST",
+    body: fd
+  })
+  .then(r => r.json())
+  .then(j => {
+    const resEl = document.getElementById("res");
+    resEl.innerText = j.message;
+
+    setTimeout(() => {
+      resEl.innerText = "";
+    }, 3000);
+  })
+  .catch(err => alert("❌ Gửi thất bại: " + err.message));
+}
     function checkReceiver() {
-      fetch("/receive", { method: "POST" })
-        .then(r => r.json())
-        .then(j => alert(j.message))
-        .catch(err => alert("❌ Không nhận được phản hồi từ người nhận"));
-    }
+  fetch("/check_feedback", { method: "POST" })
+    .then(r => r.json())
+    .then(j => {
+      if (j.received) {
+        alert(`✅ Người nhận đã phản hồi lúc ${j.time}`);
+      } else {
+        alert("❗ Người nhận chưa phản hồi!");
+      }
+    })
+    .catch(err => alert("❌ Không nhận được phản hồi từ người nhận"));
+}
   </script>
 </body>
 </html>
