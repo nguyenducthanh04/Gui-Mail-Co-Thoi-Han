@@ -8,7 +8,7 @@
 
 </div>
 
-# 📩 Gửi mail có thời 
+# 📩 Gửi mail có thời hạn
 
 Đây là hệ thống gửi và nhận tài liệu bảo mật sử dụng mã hóa AES-RSA, chữ ký số và giới hạn thời gian để đảm bảo tính an toàn, toàn vẹn và xác thực của dữ liệu.
 
