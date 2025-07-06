@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Người nhận</title>
+  <style>
+    body {
+      text-align: center;
+      font-family: Arial;
+      margin-top: 40px;
+    }
+
+    button {
+      width: 200px;
+      height: 40px;
+      cursor: pointer;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    #notice {
+      margin-top: 20px;
+      font-weight: bold;
+      color: red;
+    }
+
+    #res {
+      margin-top: 20px;
+      font-weight: bold;
+      color: green;
+    }
+
+    #dl {
+      display: none;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>📥 Nhận tin nhắn và giải mã</h2>
+  <button onclick="receive()">Nhận</button>
+
+  <div id="notice"></div>
+  <div id="res"></div>
+
+ <script>
+  function receive() {
+    fetch("/receive", { method: "POST" })
+      .then(r => r.json())
+      .then(j => {
+        const resDiv = document.getElementById("res");
+        resDiv.innerText = j.message;
+
+        // Nếu nhận thành công thì hiện thông báo xác nhận
+        if (j.message.includes("✅")) {
+          document.getElementById("dl").style.display = "inline";
+          document.getElementById("notice").innerText = "✅ Đã nhận gói tin thành công!";
+          document.getElementById("notice").style.color = "green";
+        }
+      });
+  }
+
+  function checkPacketStatus() {
+    fetch("/check_packet")
+      .then(res => res.json())
+      .then(data => {
+        const notice = document.getElementById("notice");
+        const resDiv = document.getElementById("res");
+
+        if (data.has_packet) {
+          const mins = Math.floor(data.remaining / 60);
+          const secs = data.remaining % 60;
+          notice.innerText = `📩 Có gói tin mới! Vui lòng nhận trước khi hết hạn (${mins} phút ${secs} giây).`;
+          notice.style.color = "red";
+
+          // Nếu trước đó hiển thị 'chưa có gói tin', thì xóa đi
+          if (resDiv.innerText.includes("Chưa có gói tin")) {
+            resDiv.innerText = "";
+          }
+
+        } else {
+          notice.innerText = "";
+          resDiv.innerHTML = "❗ <span style='color: green;'>Chưa có gói tin nào được gửi!</span>";
+        }
+      });
+  }
+
+  // Kiểm tra trạng thái mỗi 3 giây
+  setInterval(checkPacketStatus, 3000);
+</script>
+
+</body>
+</html>
