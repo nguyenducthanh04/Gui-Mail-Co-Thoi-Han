@@ -29,17 +29,37 @@
 ![image](https://github.com/user-attachments/assets/d6675b38-f399-461a-af56-65faa6732373)
 
 # 🔧 Công nghệ sử dụng
-## ⚙️ Phần cứng:
-- 📸 Camera (sử dụng Camera laptop)
-- 📛 Đầu lọc thẻ từ RFID
-- ⛽ Cảm biến khí gas
-- 🌞 Cảm biến ánh sáng
-- 💡 Đèn và còi báo động
-- 🖥️ Arduino
-- ⚡ Động cơ servo
-## 💾 Phần mềm:
-- 🐍 Thư viện face_recognition và OpenCV trong Python
-- 📲 Ứng dụng pushover
+🔐 Mã hóa & Bảo mật
+AES-CBC (Advanced Encryption Standard - Cipher Block Chaining)
+→ Mã hóa nội dung file nhạy cảm.
+
+RSA 2048-bit (PKCS#1 v1.5)
+→ Trao đổi khóa phiên và ký số metadata.
+
+SHA-512 (Secure Hash Algorithm)
+→ Kiểm tra tính toàn vẹn của gói tin.
+
+Chữ ký số (RSA + SHA-512)
+→ Xác thực người gửi và chống giả mạo.
+
+🖥️ Ngôn ngữ & Framework
+Python 3.10+
+
+Flask – Web framework nhẹ, xử lý backend và routing.
+
+HTML/CSS/JavaScript – Giao diện người dùng (UI).
+
+Jinja2 – Template engine của Flask (render HTML động).
+
+📦 Thư viện Python chính
+pycryptodome – Mã hóa AES, RSA, ký số và băm SHA-512.
+
+base64, json, os, datetime – Xử lý dữ liệu và thời gian.
+
+🗂️ Quản lý file
+Thư mục received_files/ – Lưu các file đã giải mã thành công.
+
+File transmission.json – Gói tin truyền tạm thời giữa người gửi và người nhận.
 # 📋 Yêu cầu hệ thống
 ## ⚙️ Phần cứng:
 - 🖥️ Arduino, 3 đèn led, còi, cảm biến khí gas, cảm biến ánh sáng, 3 servo, đầu lọc thẻ từ
