@@ -66,8 +66,8 @@
 ```pip install flask pycryptodome```
 - Hoặc dùng requirements.txt:
 📄 requirements.txt
-```flask
-pycryptodome```
+```flask```
+```pycryptodome```
 
 
 
