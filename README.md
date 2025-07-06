@@ -69,44 +69,24 @@
 ```flask```
 ```pycryptodome```
 
-
-
-
-
-# 🔌 Hướng dẫn cắm dây bảng mạch
-🔐 Cắm dây đối với chức năng mở cửa khuôn mặt, cảnh báo khí gas, cảm biến ánh sáng: 
-
-![image](https://github.com/user-attachments/assets/9b38467c-faf5-454c-b03c-c991f0fdf566)
-
-💳 Cắm dây đối với chức năng mở cửa bằng thẻ từ RFID:
-- Kết nối RFID với Arduino
-
-![image](https://github.com/user-attachments/assets/ca694cb4-f1fd-4984-8a1b-5783add3cd02)
-
-- Kết nối servo với Arduino
-
-![image](https://github.com/user-attachments/assets/f1a1dfc6-2b99-4303-87ec-59e3eb19dfbc)
-
-# 📚 Hướng dẫn cài đặt và chạy chương trình
-## 🛠️ Chuẩn bị phần cứng
-- 🔐 Nạp mã Arduino cho chức năng mở cửa bằng khuôn mặt, cảnh báo khí gas, cảm biến ánh sáng:
-  + Mở file FaceGasLightControl.ino bằng Arduino IDE
-  + Kết nối board Arduino với máy tính
-  + Chạy nạp mã nguồn vào board
-  + Đảm bảo chạy cổng COM8 để phù hợp với mã trong file face_recognition_with_web.py
-- 💳 Nạp mã Arduino cho chức năng mở cửa bằng thẻ từ:
-  + Mở file RFIDDoor.ino bằng Arduino IDE
-  + Kết nối board Arduino với máy tính
-  + Chạy nạp mã nguồn vào board
-## 🐍 Cài đặt python
-Cài đặt python về máy và cài các thư viện phía trên bằng pip
-## 📱 Cài đặt và đăng ký ứng dụng pushover
-- Cài đặt ứng dụng về máy điện thoại bằng AppStore hoặc CH Play
-- Đăng ký tài khoản trên pushover để lấy key sử dụng
+# 📚 Hướng dẫn chạy chương trình
 ## 🚀 Các bước chạy chương trình
-- Bước 1: Chạy file capture_faces.py để thiết lập khuôn mặt và lưu hình ảnh vào folder data_set (python capture_faces.py). Ứng dụng sẽ chạy sau đó camera máy tính mở lên, bạn cần nhập tên người dùng vào terminal sau đó enter để camera chụp lại khuôn mặt của bạn và lưu vào folder data_set.
-- Bước 2: Chạy file train_faces.py để training chương trình sau khi lưu xong khuôn mặt (python train_faces.py).
-- Bước 3: Chạy file face_recognition_with_web.py để sử dụng chức năng nhận diện khuôn mặt và thông báo khí gas (python face_recognition_with_web.py).
+- Bước 1: Chạy file generate_keys.py để tạo khóa bằng lệnh: ```python generate_keys.py```
+- Bước 2: Chạy chương trình: ```python app.py```
+- Bước 3: Mở trình duyệt truy cập:
+  + Giao diện gửi: http://127.0.0.1:5000/
+  + Giao diện nhận: http://127.0.0.1:5000/receiver
+  + Danh sách file đã nhận: http://127.0.0.1:5000/files
+## 📘 Cách sử dụng
+🔐 Bên gửi:
+- Vào trang chính → chọn hoặc kéo thả file .txt
+- Nhấn Gửi → hệ thống mã hóa và tạo gói tin transmission.json
+📥 Bên nhận:
+- Vào trang /receiver → nhấn Nhận
+- Nếu gói tin hợp lệ, sẽ hiển thị thông báo thành công và lưu vào thư mục received_files/
+📂 Quản lý file:
+- Truy cập trang /files để xem danh sách file đã nhận, tải về hoặc xóa
+  
 # 📘 Hướng dẫn sử dụng 
 ## 🔐 Nhận diện khuôn mặt mở cửa: 
 - Người dùng đưa khuôn mặt vào camera để nhận diện.
